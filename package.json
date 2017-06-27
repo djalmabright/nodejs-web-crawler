@@ -5,8 +5,8 @@
   "author": "Djalma Bina",
   "license": "MIT", 
     "scripts": {
-    "start": "crawler.js",
-  }
+    "start": "crawler.js"
+  },
   "dependencies": {
     "express": "latest",
     "lodash": "latest",
