@@ -2,11 +2,11 @@
   "name": "simple-webcrawler-javascript",
   "version": "0.0.0",
   "description": "A simple webcrawler written in JavaScript",
-  "scripts": {
+  "author": "Djalma Bina",
+  "license": "MIT", 
+    "scripts": {
     "start": "crawler.js",
   }
-  "author": "Djalma Bina",
-  "license": "MIT",
   "dependencies": {
     "express": "latest",
     "lodash": "latest",
