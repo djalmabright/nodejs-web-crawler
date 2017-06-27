@@ -4,6 +4,7 @@
   "description": "A simple webcrawler written in JavaScript",
   "scripts": {
     "start": "crawler.js",
+  }
   "author": "Djalma Bina",
   "license": "MIT",
   "dependencies": {
