@@ -45,7 +45,6 @@ function visitPage(url, callback) {
   // Make the request
   console.log("Visiting page " + url); 
    
-  res.write('Visiting page\n'  + url);
    
   request(url, function(error, response, body) {
      // Check status code (200 is HTTP OK)
@@ -82,4 +81,4 @@ function collectInternalLinks($) {
 
 });
 
-app.listen(21202);
+app.listen(3000);
