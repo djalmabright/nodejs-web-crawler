@@ -60,7 +60,7 @@ function visitPage(url, callback) {
 function searchForWord($, word) {
   var bodyText = $('html > body').text().toLowerCase();
   return(bodyText.indexOf(word.toLowerCase()) !== -1);
-} console.log('New entry -- accepted.').val();
+} console.log('New entry -- accepted.');
 
 function testConn(url, callback) {
   pagesVisited[url] = 0;
