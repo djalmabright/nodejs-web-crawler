@@ -1,17 +1,10 @@
 var request = require('request');
 var cheerio = require('cheerio');
 var URL = require('url-parse');
-var http = require('http'); 
-var express = require('express');
-var app = express();
 
-app.get('/', function(req, res){
- 
- 
-
-var START_URL = "http://wikipedia.org/";
-var SEARCH_WORD = "anglo-saxons";
-var MAX_PAGES_TO_VISIT = 30;
+var START_URL = "https://www.coopathome.ch";
+var SEARCH_WORD = "CoopMobile Prix Garantie";
+var MAX_PAGES_TO_VISIT = 10;
 
 var pagesVisited = {};
 var numPagesVisited = 0;
@@ -29,23 +22,21 @@ function crawl() {
   }
   var nextPage = pagesToVisit.pop();
   if (nextPage in pagesVisited) {
-    // We've already visited this page, so repeat the crawl
+    //  Already visited this page, so repeat the crawl
     crawl();
   } else {
-    // New page we haven't visited
+    // New page
     visitPage(nextPage, crawl);
   }
 }
 
 function visitPage(url, callback) {
-  // Add page to our set
+  // Add page to the set
   pagesVisited[url] = true;
   numPagesVisited++;
 
   // Make the request
-  console.log("Visiting page " + url); 
-   
-   
+  console.log("Visiting page " + url);
   request(url, function(error, response, body) {
      // Check status code (200 is HTTP OK)
      console.log("Status code: " + response.statusCode);
@@ -60,7 +51,7 @@ function visitPage(url, callback) {
        console.log('Word ' + SEARCH_WORD + ' found at page ' + url);
      } else {
        collectInternalLinks($);
-       // In this short program, our callback is just calling crawl()
+       // Callback is just calling crawl()
        callback();
      }
   });
@@ -69,6 +60,11 @@ function visitPage(url, callback) {
 function searchForWord($, word) {
   var bodyText = $('html > body').text().toLowerCase();
   return(bodyText.indexOf(word.toLowerCase()) !== -1);
+} console.log('New entry -- accepted.').val();
+
+function testConn(url, callback) {
+  pagesVisited[url] = 0;
+  numPagesVisited++;
 }
 
 function collectInternalLinks($) {
@@ -78,7 +74,3 @@ function collectInternalLinks($) {
         pagesToVisit.push(baseUrl + $(this).attr('href'));
     });
 }
-
-});
-
-app.listen(3000);
