@@ -1,8 +1,15 @@
 {
   "name": "simple-webcrawler-javascript",
   "version": "0.0.1",
-  "description": "A simple webcrawler written in JavaScript",
-  "author": "Djalma Bina",
+  "description": "A simple webcrawler written in JavaScript", 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djalmabright/nodejs-web-crawler.git"
+},
+   "author": {
+    "name": "Djalma Bina",
+    "email": "djalmabright@gmail.com"
+},
   "license": "MIT", 
     "scripts": {
     "start": "node crawler.js"
